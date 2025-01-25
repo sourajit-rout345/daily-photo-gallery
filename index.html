@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #6200ea;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #6200ea;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Daily Photo Gallery</h1>
+        <p>View the latest photos uploaded every day!</p>
+    </header>
+
+    <div class="gallery" id="gallery">
+        <!-- Images will be loaded dynamically here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Daily Photo Gallery. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Array of image URLs
+        const imageUrls = [
+            "https://via.placeholder.com/200", // Replace with your image links
+            "https://via.placeholder.com/201",
+            "https://via.placeholder.com/202"
+        ];
+
+        // Dynamically populate the gallery
+        const gallery = document.getElementById("gallery");
+        imageUrls.forEach((url) => {
+            const img = document.createElement("img");
+            img.src = url;
+            gallery.appendChild(img);
+        });
+    </script>
+</body>
+</html>
